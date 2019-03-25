@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/background_pic" />
+
+
+        <LinearLayout
+            android:layout_margin="25dp"
+            android:padding="35dp"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_centerInParent="true"
+            android:background="#BDBDBD"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:id="@+id/edit_phoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入账号"/>
+
+            <EditText
+                android:id="@+id/edit_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:hint="请输入密码"/>
+
+            <Button
+                android:id="@+id/login_but"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="登  录"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/login_register"
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:text="注册"/>
+
+        <TextView
+            android:id="@+id/login_find"
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:text="找回密码"/>
+
+
+
+
+
+
+    </RelativeLayout>
+</layout>

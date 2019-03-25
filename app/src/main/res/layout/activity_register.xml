@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:padding="30dp"
+           android:orientation="vertical">
+           <EditText
+               android:id="@+id/text_number"
+               android:layout_margin="10dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:digits="0123456789"
+               android:hint="请输入手机号"/>
+           <LinearLayout
+               android:layout_margin="10dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+               <EditText
+                   android:id="@+id/text_code"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="2"
+                   android:hint="请输入验证码"/>
+               <Button
+                   android:id="@+id/but_send_code"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="发送"/>
+
+           </LinearLayout>
+           <EditText
+               android:id="@+id/text_password_1"
+               android:layout_margin="10dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="请设置您的密码"/>
+
+           <Button
+               android:id="@+id/but_register"
+               android:layout_margin="20dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="注册"/>
+
+
+
+       </LinearLayout>
+
+
+
+        </LinearLayout>
+</layout>
