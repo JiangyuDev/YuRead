@@ -9,7 +9,13 @@ public interface RegisterContract  {
 
     interface View {
 
+        void registerSucceeded();
 
+        void registerFailed();
+
+        void getSMSCodeSucceeded();
+
+        void getSMSCodeFailed();
     }
 
     interface Presenter extends BasePresenterImpl {
@@ -18,7 +24,6 @@ public interface RegisterContract  {
         void  getSMSCode(String phone);
 
         void verifyCode(String phone,String SMSCode,String S);
-
 
 
     }

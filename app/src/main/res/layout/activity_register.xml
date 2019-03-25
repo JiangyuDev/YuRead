@@ -16,7 +16,7 @@
                android:layout_margin="10dp"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:digits="0123456789"
+               android:inputType="phone"
                android:hint="请输入手机号"/>
            <LinearLayout
                android:layout_margin="10dp"
@@ -27,6 +27,7 @@
                    android:layout_width="0dp"
                    android:layout_height="wrap_content"
                    android:layout_weight="2"
+                   android:inputType="number"
                    android:hint="请输入验证码"/>
                <Button
                    android:id="@+id/but_send_code"
@@ -41,6 +42,7 @@
                android:layout_margin="10dp"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
+               android:inputType="text"
                android:hint="请设置您的密码"/>
 
            <Button

@@ -2,6 +2,9 @@ package pers.jiangyu.yuread.base;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
@@ -9,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import cn.bmob.v3.Bmob;
+
 
 public abstract class BaseActivity <D extends ViewDataBinding,P extends BasePresenterImpl>extends AppCompatActivity {
 
@@ -25,10 +29,18 @@ public abstract class BaseActivity <D extends ViewDataBinding,P extends BasePres
         initFiled();
         initView();
     }
-    private void initFiled(){
+    protected void initFiled(){
         dataBinding = DataBindingUtil.setContentView(this,getLayoutId());
         presenter = getPresenter();
         context = this;
+    }
+
+    protected void showSnackBar(View view,String message){
+        showSnackBar(view,message,"",null);
+    }
+
+    protected void showSnackBar(View view, String message, String cue, View.OnClickListener listener){
+        Snackbar.make(view,message, Snackbar.LENGTH_SHORT).setAction(cue,listener).show();
     }
 
 

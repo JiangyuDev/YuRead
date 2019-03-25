@@ -12,11 +12,13 @@ import pers.jiangyu.yuread.base.BasePresenter;
 import pers.jiangyu.yuread.bean.RegisterBean;
 import pers.jiangyu.yuread.contract.LoginContract;
 import pers.jiangyu.yuread.model.LoginModel;
+import pers.jiangyu.yuread.util.MD5;
 
-public class LoginPresenter extends BasePresenter<LoginContract.View,LoginContract.Model> implements LoginContract.Presenter{
+public class LoginPresenter extends BasePresenter<LoginContract.View,LoginContract.Model>
+        implements LoginContract.Presenter{
     @Override
     public void doLogin(String phone ,String psword) {
-        String Token = RegisterPresenter.encryptionPassword(psword);
+        String Token = MD5.encryptionPassword(psword);
         //查找Person表里面id为6b6c11c537的数据
         BmobQuery<RegisterBean> query1 = new BmobQuery<>();
         query1.addWhereEqualTo("phoneNumber",phone);
@@ -32,9 +34,8 @@ public class LoginPresenter extends BasePresenter<LoginContract.View,LoginContra
             @Override
             public void done(List<RegisterBean> object, BmobException e) {
                 if(e==null){
-//
-//                    Log.d("doLogin",object.get(0).getPhoneNumber());
-                    Log.d("doLogin",object.get(0).getUserToken());
+                  Log.d("doLogin",object.get(0).getPhoneNumber());   //使bean与后台数据映射
+//                    Log.d("doLogin",object.get(0).getUserToken());
                     view.loginSucceeded(phone);
                 }else{
                     view.loginFailed();

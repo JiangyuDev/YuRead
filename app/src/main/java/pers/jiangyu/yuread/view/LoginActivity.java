@@ -1,5 +1,7 @@
 package pers.jiangyu.yuread.view;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
@@ -9,6 +11,7 @@ import pers.jiangyu.yuread.base.BaseActivity;
 import pers.jiangyu.yuread.contract.LoginContract;
 import pers.jiangyu.yuread.databinding.ActivityLoginBinding;
 import pers.jiangyu.yuread.presenter.LoginPresenter;
+import pers.jiangyu.yuread.util.fullScreen;
 
 public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginContract.Presenter>implements LoginContract.View {
 
@@ -18,6 +21,11 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginContr
 
     private Button signIn;
 
+    public static void actionStart(Activity activity){
+        Intent intent = new Intent(activity,LoginActivity.class);
+        activity.startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +34,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginContr
 
     @Override
     public void loginSucceeded(String phone) {
-        Toast.makeText(context,"登录成功",Toast.LENGTH_SHORT).show();
+        showSnackBar(dataBinding.loginBut,"登录成功");
         MainActivity.actionStart(LoginActivity.this,phone);
     }
 
@@ -37,6 +45,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginContr
 
     @Override
     protected void initView() {
+        fullScreen.changeFullScreen(LoginActivity.this);
         dataBinding.loginRegister.setOnClickListener(view -> {
             RegisterActivity.actionStart(LoginActivity.this);
         });

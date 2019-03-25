@@ -44,5 +44,7 @@ dependencies {
 
     implementation 'cn.bmob.android:http-legacy:1.0'
 
+    implementation 'com.android.support:design'
+
 
 }

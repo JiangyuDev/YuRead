@@ -6,11 +6,11 @@
         android:layout_height="match_parent">
 
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/background_pic" />
-
+           <ImageView
+               android:layout_width="match_parent"
+               android:layout_height="250dp"
+               android:scaleType="fitXY"
+               android:src="@drawable/city_cloud" />
 
         <LinearLayout
             android:layout_margin="25dp"
@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="260dp"
             android:layout_centerInParent="true"
-            android:background="#BDBDBD"
+
             android:orientation="vertical">
 
 
@@ -26,6 +26,7 @@
                 android:id="@+id/edit_phoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="phone"
                 android:hint="请输入账号"/>
 
             <EditText
@@ -33,6 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
+                android:inputType="textPassword"
                 android:hint="请输入密码"/>
 
             <Button
@@ -46,7 +48,7 @@
 
         <TextView
             android:id="@+id/login_register"
-            android:layout_margin="20dp"
+            android:layout_margin="60dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -55,7 +57,7 @@
 
         <TextView
             android:id="@+id/login_find"
-            android:layout_margin="20dp"
+            android:layout_margin="60dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
