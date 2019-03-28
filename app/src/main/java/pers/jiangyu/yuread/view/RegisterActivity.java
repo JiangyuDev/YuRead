@@ -20,8 +20,29 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding, Regi
     private String password;
 
     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        setToolBarTittle(R.string.titleResId);
+        setUseBackAndMenu(true,false);
+        super.onCreate(savedInstanceState);
+        initView();
+    }
+
+    @Override
+    protected void initView() {
+        dataBinding.butSendCode.setOnClickListener(view->{
+            phone = dataBinding.textNumber.getText().toString();
+            presenter.getSMSCode(phone); });
+        dataBinding.butRegister.setOnClickListener(view1 ->{
+            SMSCode = dataBinding.textCode.getText().toString();
+            password = MD5.encryptionPassword(dataBinding.textPassword1.getText().toString());
+            presenter.verifyCode(phone,SMSCode,password);
+        } );
+
+    }
+
+    @Override
     public void registerFailed() {
-       showSnackBar(dataBinding.butSendCode,"请再次确认您输入的信息");
+        showSnackBar(dataBinding.butSendCode,"请再次确认您输入的信息");
     }
 
     @Override
@@ -45,25 +66,6 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding, Regi
         activity.startActivity(intent);
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        initView();
-
-    }
-
-    @Override
-    protected void initView() {
-        dataBinding.butSendCode.setOnClickListener(view->{
-            phone = dataBinding.textNumber.getText().toString();
-            presenter.getSMSCode(phone); });
-        dataBinding.butRegister.setOnClickListener(view1 ->{
-            SMSCode = dataBinding.textCode.getText().toString();
-            password = MD5.encryptionPassword(dataBinding.textPassword1.getText().toString());
-            presenter.verifyCode(phone,SMSCode,password);
-        } );
-
-    }
 
 //    @Override
 //    protected RegisterPresenter getPresenter() {

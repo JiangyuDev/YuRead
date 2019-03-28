@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_news"
+        android:icon="@drawable/forum"
+        android:title="论坛" />
+    <item
+        android:id="@+id/item_find"
+        android:icon="@drawable/others"
+        android:title="分类" />
+    <item
+        android:id="@+id/item_lib"
+        android:icon="@drawable/found"
+        android:title="发现" />
+
+
+</menu>
+
