@@ -41,7 +41,9 @@
                 android:layout_width="match_parent"
                 android:name="pers.jiangyu.yuread.view.MeFragment"
                 android:layout_gravity="start"
-                android:layout_height="match_parent"/>
+                android:layout_marginLeft="60dp"
+                android:layout_height="match_parent"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
 
         </androidx.drawerlayout.widget.DrawerLayout>
 

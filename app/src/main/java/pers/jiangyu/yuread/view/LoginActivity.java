@@ -11,7 +11,7 @@ import pers.jiangyu.yuread.base.BaseActivity;
 import pers.jiangyu.yuread.contract.LoginContract;
 import pers.jiangyu.yuread.databinding.ActivityLoginBinding;
 import pers.jiangyu.yuread.presenter.LoginPresenter;
-import pers.jiangyu.yuread.util.screenSet;
+import pers.jiangyu.yuread.util.ScreenSet;
 
 
 public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginContract.Presenter>implements LoginContract.View {
@@ -46,7 +46,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginContr
 
     @Override
     protected void initView() {
-        screenSet.changeFullScreen(LoginActivity.this);
+        ScreenSet.changeFullScreen(LoginActivity.this);
         dataBinding.loginRegister.setOnClickListener(view -> {
             RegisterActivity.actionStart(LoginActivity.this);
         });

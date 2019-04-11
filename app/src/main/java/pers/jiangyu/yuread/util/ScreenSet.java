@@ -13,7 +13,7 @@ import java.lang.reflect.Field;
 import androidx.customview.widget.ViewDragHelper;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-public class screenSet {
+public class ScreenSet {
 
     public static void changeFullScreen(Activity activity){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

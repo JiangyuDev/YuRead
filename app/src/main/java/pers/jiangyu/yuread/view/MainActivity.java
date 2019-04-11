@@ -18,9 +18,14 @@ import pers.jiangyu.yuread.base.BaseActivity;
 import pers.jiangyu.yuread.base.BasePresenterImpl;
 import pers.jiangyu.yuread.contract.MainContract;
 import pers.jiangyu.yuread.databinding.ActivityMainBinding;
-import pers.jiangyu.yuread.util.screenSet;
 
-public class MainActivity extends BaseActivity <ActivityMainBinding, BasePresenterImpl>implements MainContract.View {
+public class  MainActivity extends BaseActivity <ActivityMainBinding, BasePresenterImpl>implements MainContract.View {
+
+    private String userId;
+
+    public String getUserId(){
+        return userId;
+    }
 
     public static void actionStart(Activity activity, String userId){
         Intent intent = new Intent(activity,MainActivity.class);
@@ -31,14 +36,14 @@ public class MainActivity extends BaseActivity <ActivityMainBinding, BasePresent
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        screesetDrawerLeftEdgeSize(xxxActivity, mDrawerLayout, 0.3f);
         initView();
-        screenSet.setDrawerLeftEdgeSize(MainActivity.this,dataBinding.drawerLayout,0.1f);
+
     }
+
 
     @Override
     protected void initView() {
-
+        userId = getIntent().getStringExtra("userId");
         dataBinding.bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         dataBinding.viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

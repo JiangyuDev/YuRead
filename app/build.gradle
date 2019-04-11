@@ -47,6 +47,8 @@ dependencies {
 
 
     implementation 'cn.bmob.android:http-legacy:1.0'
+    //圆形图片剪裁
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
 
 
 }
