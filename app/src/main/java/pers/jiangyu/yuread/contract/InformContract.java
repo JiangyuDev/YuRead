@@ -8,7 +8,7 @@ public interface InformContract {
     }
 
     interface Presenter extends BasePresenterImpl {
-        void submitInform(String phone , String name ,String address, String motto );
+        void submitInform(String phone , String name ,String address, String motto,String myIcon );
 
     }
 

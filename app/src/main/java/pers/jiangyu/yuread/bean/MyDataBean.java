@@ -1,10 +1,12 @@
 package pers.jiangyu.yuread.bean;
 
+import cn.bmob.v3.BmobObject;
+
 /**
  * create by Jy on 2019/4/4 16:39
  * email：jiangyu9804@163.com
  */
-public class MyDataBean {
+public class MyDataBean extends BmobObject {
 
     private String phoneNum;
 
@@ -13,6 +15,16 @@ public class MyDataBean {
     private String address;
 
     private String motto;
+
+    private String myIcon;
+
+    public void setMyIcon(String myIcon) {
+        this.myIcon = myIcon;
+    }
+
+    public String getMyIcon() {
+        return myIcon;
+    }
 
     public void setPhoneNum(String phoneNum) {
         this.phoneNum = phoneNum;

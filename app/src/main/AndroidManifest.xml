@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="pers.jiangyu.yuread">
     <!-- 允许联网 -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 获取GSM（2g）、WCDMA（联通3g）等网络状态的信息 -->
@@ -18,7 +19,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".view.InformationActivity"></activity>
         <activity android:name=".view.RegisterActivity" />
         <activity android:name=".view.LoginActivity">
@@ -29,7 +31,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.MainActivity" />
-
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="pers.jiangyu.yuread.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths">
+            </meta-data>
+        </provider>
         <provider
             android:name="cn.bmob.v3.util.BmobContentProvider"
             android:authorities="pers.jiangyu.yuread.BmobContentProvider"></provider>
